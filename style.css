@@ -1,0 +1,555 @@
+/* ========================= */
+/* CONFIGURACIÓN GENERAL */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#060816;
+
+    color:white;
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+/* ========================= */
+/* FONDO */
+/* ========================= */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(
+        to bottom,
+        #040814,
+        #0b1535,
+        #060816
+    );
+
+    z-index:-3;
+
+}
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.25;
+
+    animation:starsMove 140s linear infinite;
+
+    z-index:-2;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-700px);
+
+    }
+
+}
+
+/* ========================= */
+/* ESCENAS */
+/* ========================= */
+
+.scene{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    padding:40px;
+
+    animation:fadeScene 1s;
+
+}
+
+.scene.active{
+
+    display:flex;
+
+}
+
+@keyframes fadeScene{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ========================= */
+/* INTRODUCCIÓN */
+/* ========================= */
+
+.intro{
+
+    text-align:center;
+
+    max-width:900px;
+
+}
+
+.line1{
+
+    font-size:30px;
+
+    font-weight:300;
+
+    opacity:0;
+
+    animation:showText 2s forwards;
+
+}
+
+.line2{
+
+    margin-top:20px;
+
+    font-size:75px;
+
+    color:#FFD369;
+
+    font-family:'Great Vibes',cursive;
+
+    opacity:0;
+
+    animation:showText 2s forwards;
+
+    animation-delay:1.8s;
+
+}
+
+@keyframes showText{
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+button{
+
+    margin-top:60px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    background:#f48fb1;
+
+    color:white;
+
+    font-size:18px;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+button:hover{
+
+    transform:scale(1.06);
+
+    box-shadow:0 0 30px rgba(244,143,177,.7);
+
+}
+
+/* ========================= */
+/* CARTA */
+/* ========================= */
+
+.letter{
+
+    width:850px;
+
+    max-width:90%;
+
+    height:85vh;
+
+    overflow-y:auto;
+
+    background:#F7EFD8;
+
+    color:#3b342d;
+
+    border-radius:20px;
+
+    padding:55px;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+
+}
+
+.date{
+
+    text-align:right;
+
+    color:#777;
+
+    margin-bottom:15px;
+
+    font-size:15px;
+
+}
+
+.letter h2{
+
+    text-align:center;
+
+    color:#d86b8e;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:58px;
+
+    margin-bottom:35px;
+
+}
+
+#letterText{
+
+    font-size:20px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+    min-height:340px;
+
+}/* ========================= */
+/* GALERÍA */
+/* ========================= */
+
+.galleryTitle{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:60px;
+
+    color:#FFD369;
+
+    margin-bottom:50px;
+
+    text-align:center;
+
+}
+
+.gallery{
+
+    display:flex;
+
+    gap:35px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+}
+
+.gallery img{
+
+    width:260px;
+
+    height:340px;
+
+    object-fit:cover;
+
+    background:white;
+
+    padding:12px 12px 45px 12px;
+
+    border-radius:6px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+    transition:.35s;
+
+}
+
+.gallery img:nth-child(1){
+
+    transform:rotate(-8deg);
+
+}
+
+.gallery img:nth-child(2){
+
+    transform:rotate(3deg);
+
+}
+
+.gallery img:nth-child(3){
+
+    transform:rotate(8deg);
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.08) rotate(0deg);
+
+}
+
+/* ========================= */
+/* CONTADOR */
+/* ========================= */
+
+.subtitle{
+
+    margin-top:10px;
+
+    color:#dddddd;
+
+    margin-bottom:50px;
+
+}
+
+#counter{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    margin-bottom:60px;
+
+}
+
+.timeBox{
+
+    width:110px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    backdrop-filter:blur(8px);
+
+    text-align:center;
+
+}
+
+.timeBox span{
+
+    display:block;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#FFD369;
+
+}
+
+.timeBox small{
+
+    color:#d8d8d8;
+
+}
+
+/* ========================= */
+/* MENSAJE FINAL */
+/* ========================= */
+
+.finalMessage{
+
+    text-align:center;
+
+    max-width:700px;
+
+}
+
+.finalMessage h3{
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+}
+
+.finalMessage h1{
+
+    margin:25px 0;
+
+    font-size:72px;
+
+    color:#F48FB1;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+.finalMessage p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:900px){
+
+    .line2{
+
+        font-size:54px;
+
+    }
+
+    .gallery img{
+
+        width:210px;
+
+        height:290px;
+
+    }
+
+    .letter{
+
+        padding:30px;
+
+    }
+
+    .letter h2{
+
+        font-size:46px;
+
+    }
+
+    #letterText{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+        min-height:auto;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .line1{
+
+        font-size:22px;
+
+    }
+
+    .line2{
+
+        font-size:40px;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    .gallery{
+
+        flex-direction:column;
+
+    }
+
+    .gallery img{
+
+        transform:none !important;
+
+    }
+
+    .galleryTitle{
+
+        font-size:42px;
+
+    }
+
+    .finalMessage h1{
+
+        font-size:48px;
+
+    }
+
+    .timeBox{
+
+        width:95px;
+
+    }
+
+#continueButton{
+
+    display:none;
+
+    margin:50px auto 10px auto;
